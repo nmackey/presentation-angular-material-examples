@@ -1,28 +1,32 @@
 <div class="main-container" layout="row">
 
   <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-    <header layout="column">
-      <img src="/assets/images/ng-nebraska.svg" alt="">
-      <h1>ng-nebraska</h1>
-    </header>
-    <md-content layout="column" flex>
-      <md-button ng-repeat="item in [1,2,3,4,5]" class="md-primary md-raised">item-{{item}}</md-button>
+    <md-content md-theme="example">
+      <header layout="column">
+        <img src="/assets/images/ng-nebraska.svg" alt="">
+        <h1>ng-nebraska</h1>
+      </header>
+      <md-content layout="column" flex>
+        <md-button ng-repeat="item in [1,2,3,4,5]" class="md-primary md-raised">item-{{item}}</md-button>
+      </md-content>
     </md-content>
   </md-sidenav>
 
   <div layout="column" flex>
 
-    <md-toolbar>
+    <md-toolbar md-theme="example">
       <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" ng-click="vm.toggleSidenav()" hide-gt-md>
+        <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.toggleSidenav()">
           <md-icon>menu</md-icon>
         </md-button>
+
         <h2>Talk Proposals</h2>
       </div>
     </md-toolbar>
 
     <md-content flex>
       <div class="main-view">
+
         <md-list>
           <md-card ng-repeat="proposal in vm.proposals | orderBy:'-rank'">
             <md-list-item class="md-2-line">
@@ -30,11 +34,11 @@
                 <h3>{{proposal.title}}</h3>
                 <p>{{proposal.description}}</p>
               </div>
-              <md-button class="md-icon-button" aria-label="upvote" ng-click="proposal.rank = proposal.rank + 1">
+              <md-button class="md-icon-button" aria-label="upvote" ng-click="proposal.rank = proposal.rank + 1" md-no-ink="true">
                 <md-icon>keyboard_arrow_up</md-icon>
               </md-button>
               <h3>{{proposal.rank}}</h3>
-              <md-button class="md-icon-button" aria-label="downvote" ng-click="proposal.rank = proposal.rank - 1">
+              <md-button class="md-icon-button" aria-label="downvote" ng-click="proposal.rank = proposal.rank - 1" md-no-ink="true">
                 <md-icon>keyboard_arrow_down</md-icon>
               </md-button>
             </md-list-item>
@@ -42,7 +46,7 @@
         </md-list>
 
         <div layout="row" layout-align="end start">
-          <md-button class="md-fab" aria-label="Add Proposal" ng-click="vm.add=true" ng-hide="vm.add">
+          <md-button md-theme="example" class="md-fab" aria-label="Add Proposal" ng-click="vm.add=true" ng-hide="vm.add">
             <md-icon>add</md-icon>
           </md-button>
         </div>
@@ -61,8 +65,8 @@
               <textarea aria-hidden="true" ng-model="vm.newProposal.description" columns="1" md-maxlength="250" required></textarea>
             </md-input-container>
             <div layout="row" layout-align="end start">
-              <md-button class="md-raised md-primary" ng-click="vm.save()" ng-disabled="vm.proposalForm.$invalid">Save</md-button>
-              <md-button class="md-raised md-warn" ng-click="vm.cancel()">Cancel</md-button>
+              <md-button md-theme="example" class="md-raised md-primary" ng-click="vm.save()" ng-disabled="vm.proposalForm.$invalid">Save</md-button>
+              <md-button md-theme="example" class="md-raised md-warn" ng-click="vm.cancel()">Cancel</md-button>
             </div>
           </form>
         </md-card>
