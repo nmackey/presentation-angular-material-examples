@@ -22,6 +22,25 @@
     </md-toolbar>
 
     <md-content flex>
+      <div class="main-view">
+        <md-list>
+          <md-card ng-repeat="proposal in vm.proposals | orderBy:'-rank'">
+            <md-list-item class="md-2-line">
+              <div class="md-list-item-text" flex>
+                <h3>{{proposal.title}}</h3>
+                <p>{{proposal.description}}</p>
+              </div>
+              <md-button class="md-icon-button" aria-label="upvote" ng-click="proposal.rank = proposal.rank + 1">
+                <md-icon>keyboard_arrow_up</md-icon>
+              </md-button>
+              <h3>{{proposal.rank}}</h3>
+              <md-button class="md-icon-button" aria-label="downvote" ng-click="proposal.rank = proposal.rank - 1">
+                <md-icon>keyboard_arrow_down</md-icon>
+              </md-button>
+            </md-list-item>
+          </md-card>
+        </md-list>
+      </div>
     </md-content>
 
   </div>
