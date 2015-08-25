@@ -11,7 +11,7 @@ class MainController {
 
     this.save = () => {
       this.newProposal.rank = 1;
-      this.proposals.push(vm.newProposal);
+      this.proposals.push(this.newProposal);
       this.add = false;
       this.newProposal = {};
     }
