@@ -1,5 +1,26 @@
-<div>
+<div class="main-container" layout="row">
 
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="true">
+    <header layout="column">
+      <img src="/assets/images/ng-nebraska.svg" alt="">
+      <h1>ng-nebraska</h1>
+    </header>
+    <md-content layout="column" flex>
+      <md-button ng-repeat="item in [1,2,3,4,5]" class="md-primary md-raised">item-{{item}}</md-button>
+    </md-content>
+  </md-sidenav>
 
+  <div layout="column" flex>
+
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Talk Proposals</h2>
+      </div>
+    </md-toolbar>
+
+    <md-content flex>
+    </md-content>
+
+  </div>
 
 </div>
