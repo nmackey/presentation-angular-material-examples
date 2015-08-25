@@ -1,6 +1,25 @@
 class MainController {
-  constructor () {
+  constructor ($mdSidenav, mainService) {
     'ngInject';
+
+    this.add = false;
+    this.proposals = mainService.getProposals();
+
+    this.toggleSidenav = () => {
+      $mdSidenav('left').toggle();
+    }
+
+    this.save = () => {
+      this.newProposal.rank = 1;
+      this.proposals.push(vm.newProposal);
+      this.add = false;
+      this.newProposal = {};
+    }
+
+    this.cancel = () => {
+      this.add = false;
+      this.newProposal = {};
+    }
   }
 }
 

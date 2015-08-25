@@ -18,6 +18,84 @@ html {
   padding: 0.2em 0;
 }
 
+/************
+* Font Icons
+*************/
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/assets/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(/assets/fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(/assets/fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+div[ui-view] {
+  height: 100%;
+  .main-container {
+    height: 100%;
+  }
+}
+
+.md-sidenav-left {
+  // background-color: rgb(66,66,66);
+
+  header {
+    img {
+      height: 250px;
+    }
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+.md-toolbar-tools {
+  max-width: 960px;
+}
+
+.main-view {
+  max-width: 960px;
+}
+
+md-list-item {
+  padding-left: 20px !important;
+  align-items: center !important;
+}
+
+form {
+  .md-button[disabled] {
+    color: #555 !important;
+    background-color: #ccc !important;
+  }
+}
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
